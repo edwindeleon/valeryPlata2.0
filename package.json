@@ -1,0 +1,49 @@
+{
+  "name": "valeryPlata",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.47",
+    "@babel/runtime": "7.0.0-beta.47",
+    "firebase": "^3.6.7",
+    "lodash": "4.17.10",
+    "mobx": "5.1.0",
+    "mobx-react": "5.2.5",
+    "moment": "^2.17.1",
+    "prop-types": "^15.6.2",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-animatable": "^1.1.0",
+    "react-native-code-push": "1.17.0-beta",
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-gifted-chat": "0.1.1",
+    "react-native-google-analytics-bridge": "^5.0.0",
+    "react-native-image-picker": "^0.25.1",
+    "react-native-keyboard-aware-scroll-view": "0.7.2",
+    "react-native-lightbox": "^0.6.0",
+    "react-native-loading-spinner-overlay": "^0.4.1",
+    "react-native-mobx": "^0.3.1",
+    "react-native-modal-picker": "^0.0.16",
+    "react-native-onesignal": "^3.0.0",
+    "react-native-phone-call": "^1.0.7",
+    "react-native-scrollable-tab-view": "^0.7.1",
+    "react-native-share": "1.0.19",
+    "react-native-vector-icons": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.0",
+    "babel-preset-react-native": "^5",
+    "flow-bin": "^0.76.0",
+    "jest": "^23.4.1",
+    "jsc-android": "^224109.0.0",
+    "react-native-cli": "^2.0.1",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
