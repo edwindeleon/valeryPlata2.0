@@ -15,7 +15,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import { firebaseApp } from '../firebase'
 import { observer, inject } from 'mobx-react/native'
-import { Actions } from 'react-native-mobx'
+
 import OneSignal from 'react-native-onesignal'
 
 

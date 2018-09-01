@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Router, Scene, Actions } from 'react-native-mobx'
+import { Router, Scene, Actions, Stack } from 'react-native-router-flux'
 import { Provider } from 'mobx-react/native'
 import codePush from 'react-native-code-push'
 import OneSignal from 'react-native-onesignal'
@@ -45,13 +45,10 @@ class App extends Component {
     return (
       <Provider appStore={appStore}>
         <Router>
-          <Scene
-            key="login"
-            component={LoginScreen}
-            duration={1}
-            hideNavBar
-            initial
-          />
+          <Stack key="root">
+            <Scene key="login" hideNavBar duration={1} component={LoginScreen} title="Login"/>
+            
+          </Stack>
         </Router>
       </Provider>
     )
