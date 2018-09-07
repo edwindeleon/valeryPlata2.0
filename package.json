@@ -6,6 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
+  "rnpm": {
+    "assets": [
+      "./src/assets/fontello/font/"
+    ]
+  },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "7.0.0-beta.47",
     "@babel/runtime": "7.0.0-beta.47",
@@ -20,19 +25,19 @@
     "react-native-animatable": "^1.1.0",
     "react-native-code-push": "1.17.0-beta",
     "react-native-fetch-blob": "^0.10.8",
-    "react-native-gifted-chat": "0.1.1",
+    "react-native-gifted-chat": "^0.4.3",
     "react-native-google-analytics-bridge": "^5.0.0",
     "react-native-image-picker": "^0.25.1",
     "react-native-keyboard-aware-scroll-view": "0.7.2",
-    "react-native-lightbox": "^0.6.0",
+    "react-native-lightbox": "0.8.0",
     "react-native-loading-spinner-overlay": "^0.4.1",
     "react-native-modal-picker": "^0.0.16",
     "react-native-onesignal": "^3.0.0",
     "react-native-phone-call": "^1.0.7",
     "react-native-router-flux": "4.0.1",
-    "react-native-scrollable-tab-view": "^0.7.1",
+    "react-native-scrollable-tab-view2": "^0.8.2",
     "react-native-share": "1.0.19",
-    "react-native-vector-icons": "^4.0.0"
+    "react-native-vector-icons": "^5.0.0"
   },
   "devDependencies": {
     "babel-jest": "23.4.0",

@@ -4,7 +4,11 @@ import { Router, Scene, Actions, Stack } from 'react-native-router-flux'
 import { Provider } from 'mobx-react/native'
 import codePush from 'react-native-code-push'
 import OneSignal from 'react-native-onesignal'
+import HomeScreen from './views/home_screen'
 import LoginScreen from './views/login_screen'
+import SettingScreen from './views/setting_screen'
+import ChatScreen from './views/chat_screen'
+import AdminStartedChat from './components/home_screen/adminStartedChat'
 import appStore from './store/AppStore'
 
 React.PropTypes = PropTypes;
@@ -41,13 +45,48 @@ class App extends Component {
     })
   }
   render() {
-    
+    console.disableYellowBox = true
     return (
       <Provider appStore={appStore}>
         <Router>
           <Stack key="root">
-            <Scene key="login" hideNavBar duration={1} component={LoginScreen} title="Login"/>
-            
+            <Scene
+              key="login"
+              component={LoginScreen}
+              duration={1}
+              hideNavBar
+              initial
+            />
+            <Scene
+              key="home"
+              component={HomeScreen}
+              duration={1}
+              hideNavBar
+            />
+            <Scene
+            key="chat"
+            component={ChatScreen}
+            //direction="vertical"
+            hideNavBar={false}
+            panHandlers={null}
+            duration={0}
+          />
+          <Scene
+            key="globalChat"
+            component={AdminStartedChat}
+            //direction="vertical"
+            hideNavBar={false}
+            panHandlers={null}
+            duration={0}
+          />
+          <Scene
+            key="setting"
+            component={SettingScreen}
+            hideNavBar={false}
+            title="Editar Perfil"
+            panHandlers={null}
+            duration={0}
+          />
           </Stack>
         </Router>
       </Provider>
@@ -55,4 +94,5 @@ class App extends Component {
   }
 }
 
-export default App
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+export default App = codePush(codePushOptions)(App)
