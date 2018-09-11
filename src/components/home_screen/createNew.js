@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TextInput,
   Picker,
+  ActionSheetIOS,
   TouchableOpacity,
   LayoutAnimation,
   Platform,
@@ -21,7 +22,7 @@ import { getColor } from '../config'
 import { firebaseApp } from '../../firebase'
 import firebase from 'firebase'
 import { observer,inject } from 'mobx-react/native'
-
+import ModalSelector from 'react-native-modal-selector'
 
 const Blob = RNFetchBlob.polyfill.Blob
 const fs = RNFetchBlob.fs
@@ -65,7 +66,7 @@ export default class CreateNew extends Component {
       postText: '',
       postTitle: '',
       postPrice: '',
-      productType: null,
+      productType: 1,
       imagePath: null,
       imageHeight: null,
       imageWidth: null,
@@ -84,6 +85,11 @@ export default class CreateNew extends Component {
   }
 
   render() {
+        const data = [
+            { key: 0, section: true, label: 'Seleccione Tipo' },
+            { key: 1, label: 'Ofertas' },
+            { key: 2, label: 'Productos' }
+        ];
     const height = ((screenWidth-40)*this.state.imageHeight/this.state.imageWidth)
     const photo = this.state.imagePath ?
       <View style={{ flex:1, }}>
@@ -125,6 +131,7 @@ export default class CreateNew extends Component {
                 />
               </TouchableOpacity>
               <Text style={styles.message}>{this.state.postStatus}</Text>
+               
               <View style={styles.titleContainer}>
                 <TextInput
                 style={styles.inputField}
@@ -154,20 +161,13 @@ export default class CreateNew extends Component {
                 }}
                 />
               </View>
-              <View style={styles.titleContainer}>
-                <Picker
-                  selectedValue={this.state.productType}
-                  mode='dropdown'
-                  ref='productType'
-                  prompt='Tipo de producto'
-                  style={styles.inputField}
-                  
-                  onValueChange={(itemValue, itemIndex) => this.setState({productType: itemValue})}>
-                  <Picker.Item label="Seleccione tipo de producto" value="0" />
-                  <Picker.Item style={styles.inputField} label="Oferta" value="1" />
-                  <Picker.Item label="Producto" value="2" />
-                </Picker>
-              </View>
+             
+              <ModalSelector style={styles.inputContainer}
+                data={data}
+                initValue="Tipo de producto"
+                onChange={option => { this.setState({productType:option.key}) }} 
+              />
+              
               <View style={styles.inputContainer}>
                 <TextInput
                 ref='ThirdInput'
@@ -180,6 +180,7 @@ export default class CreateNew extends Component {
                 placeholderTextColor='rgba(0,0,0,.6)'
                 />
               </View>
+             
               <TouchableOpacity style={styles.btnAdd} onPress={this.state.productType==1 ? this._handleNewPost : this._handleNewPost2}>
                 <Icon
                   name={'md-add'}
@@ -506,6 +507,7 @@ const styles = StyleSheet.create({
   inputField: {
     flex: 1,
     width: 300,
+    height:100,
     paddingLeft: 10,
     paddingTop: 4,
     paddingBottom: 4,

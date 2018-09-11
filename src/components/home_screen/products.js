@@ -192,8 +192,8 @@ export default class Products extends Component {
                 source={{ uri:data.image }}
                 resizeMode='contain'
                 style={{
-                  height: height,
-                  width: screenWidth,
+                  height: height - 20,
+                  width: screenWidth - 22,
                   alignSelf: 'center',
                 }}
               />
@@ -227,8 +227,8 @@ export default class Products extends Component {
                 source={{ uri:data.image }}
                 resizeMode='contain'
                 style={{
-                  height: height,
-                  width: screenWidth,
+                  height: height - 20,
+                  width: screenWidth - 22,
                   alignSelf: 'center',
                 }}
               />
@@ -487,7 +487,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   postImage: {
-    backgroundColor: '#eee',
+    backgroundColor: '#fff',
   },
   postInfo: {
     paddingLeft: 10,

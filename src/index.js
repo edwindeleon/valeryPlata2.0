@@ -31,7 +31,7 @@ class App extends Component {
         console.log('CURRENT PUID:' + appStore.current_pui)
         console.log('ISACTIVE: ', openResult.notification.isAppInFocus)
         console.log('DATA: ', openResult.notification.payload.additionalData)
-       /* if (!openResult.notification.isAppInFocus) {
+        if (!openResult.notification.isAppInFocus) {
           if (openResult.notification.payload.additionalData) {
             if (appStore.current_puid != openResult.notification.payload.additionalData.puid) {
               Actions.login({ type: 'replace', postProps:openResult.notification.payload.additionalData })
@@ -40,7 +40,7 @@ class App extends Component {
           else {
             Actions.login({ type: 'replace', postProps:null })
           }
-        }*/
+        }
       }
     })
   }

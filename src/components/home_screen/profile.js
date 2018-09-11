@@ -15,7 +15,6 @@ import _ from 'lodash'
 import moment from 'moment'
 import { firebaseApp } from '../../firebase'
 import Icon from 'react-native-vector-icons/Ionicons'
-import ModalPicker from 'react-native-modal-picker'
 import { getColor } from '../config'
 import { observer,inject } from 'mobx-react/native'
 import { Actions } from 'react-native-router-flux'
@@ -109,36 +108,7 @@ export default class Profile extends Component {
   _llamar2 = () => {
     call(args2).catch(console.error)
   }
-  _renderRow = (data) => {
-    let index = 0;
-    const options = [
-        { key: index++, section: true, label: 'Status' },
-        { key: index++, label: 'disponible' },
-        { key: index++, label: 'no disponible' },
-    ]
-    const timeString = moment(data.updatedAt).fromNow()
-    const Status = (data.status === 'available') ? <Text style={{fontWeight:'bold',color:"green"}}>DISPOBIBLE</Text> : <Text style={{fontWeight:'bold',color:"red"}}>NO DISPOBIBLE</Text>
-    return (
-      <TouchableOpacity onPress={() => this._openChat(data)}>
-        <View style={styles.card}>
-          <View style={styles.RawContainer}>
-            <View style={styles.LeftContainer}><Text style={styles.title}>{ data.title }</Text></View>
-          </View>
-          <View style={styles.RawContainer}>
-            <View style={styles.LeftContainer}><Text style={styles.info}>{ data.price }</Text></View>
-            <View style={styles.RightContainer}>
-              <ModalPicker data={options} onChange={ (option)=>this._changeStatus(option, data) }>
-                { Status }
-              </ModalPicker>
-            </View>
-          </View>
-          <View style={styles.RawContainer}>
-            <Text style={styles.info}>{timeString}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-    )
-  }
+
 
   _userEdit = () => {
     Actions.setting()
