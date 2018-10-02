@@ -109,7 +109,7 @@ export default class StartedChat extends Component {
             onChangeText={this.handleChangeText}
           />
           <TouchableOpacity onPress={this.handleSend}>
-            <Icon name="ios-send-outline" size={30} color="gray" />
+            <Icon name={'md-send'} size={30} color={'gray'} />
           </TouchableOpacity>
         </View>
       </View>

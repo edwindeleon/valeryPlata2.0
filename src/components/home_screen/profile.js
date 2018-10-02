@@ -91,7 +91,7 @@ export default class Profile extends Component {
           </View>
         </View>
         <Text style={styles.titleTop}>{'SOBRE ESTA APLICACIóN'.toUpperCase()}</Text>
-        <Text style={styles.copy}>V 1.4</Text>
+        <Text style={styles.copy}>V 1.0.3</Text>
         <Text style={styles.copy}>Joyería Valery Plata </Text>
         <Text style={styles.copy2}>Av. 27 de Febrero casi esq. Nuñez de Cáceres, Plaza Dominica</Text>
         <TouchableOpacity onPress={this._llamar2}><Text style={styles.copyTel}>809-537-9837</Text></TouchableOpacity>

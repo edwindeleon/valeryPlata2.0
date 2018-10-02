@@ -75,7 +75,7 @@ export default class StartChat extends Component {
                         />
                       
                         <TouchableOpacity style={styles.btnAdd} onPress={this._handleNewPost}>
-                        <Icon name="ios-send-outline" size={30} color="gray" />
+                        <Icon name={'md-send'} size={30} color={'gray'} />
                           
                         </TouchableOpacity>
                       </View>

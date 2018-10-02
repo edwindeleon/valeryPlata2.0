@@ -24,7 +24,7 @@ export default class NavigationTab extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View>
+        <View style={styles.logo}>
           <TouchableOpacity>
             <Image source={require('../../assets/images/logoNombre.png')} style={styles.logoImage} />
           </TouchableOpacity>
@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
     backgroundColor: getColor('googleBlue500'),
     elevation: 5,
     height: 130,
+  },
+  logo:{
+    paddingTop:15,
   },
   tabs: {
     height: 50,

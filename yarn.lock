@@ -4789,9 +4789,9 @@ react-native-modal-selector@^0.0.29:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-onesignal@^3.0.0:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-3.2.6.tgz#b28f874451c39d421a824209512a113a7aa8f24e"
+react-native-onesignal@3.2.7:
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-3.2.7.tgz#8e3245b720af68af7d01ff572c56cbb3521b88f5"
   dependencies:
     invariant "^2.2.2"
 

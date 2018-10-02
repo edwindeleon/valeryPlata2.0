@@ -33,7 +33,7 @@
     "react-native-lightbox": "0.8.0",
     "react-native-loading-spinner-overlay": "^0.4.1",
     "react-native-modal-selector": "^0.0.29",
-    "react-native-onesignal": "^3.0.0",
+    "react-native-onesignal": "3.2.7",
     "react-native-phone-call": "^1.0.7",
     "react-native-router-flux": "4.0.1",
     "react-native-scrollable-tab-view2": "^0.8.2",
